@@ -29,7 +29,7 @@ function check_day_num($int)
 function check_year($int)
 {
 	$tmp = intval($int);
-	if ($tmp < 1970)
+	if ($tmp < 1970 || $tmp > 9999)
 		return 0;
 	else
 		return $tmp;
@@ -37,6 +37,8 @@ function check_year($int)
 
 function check_time($t_arr)
 {
+	if (strlen($t_arr[0]) != 2 || strlen($t_arr[1]) != 2 || strlen($t_arr[2]) != 2)
+		return 0;
 	$tmp1 = intval($t_arr[0]);
 	$tmp2 = intval($t_arr[1]);
 	$tmp3 = intval($t_arr[2]);
@@ -87,20 +89,20 @@ function month_atoi($str)
 
 if ($argc == 2)
 {
-	$arr = preg_split("/ /", $argv[1]);
+	$arr = preg_split("/ +/", $argv[1]);
 	$day = check_day($arr[0]);
 	$day_num = check_day_num($arr[1]);
 	$month = check_month($arr[2]);
 	$year = check_year($arr[3]);
 	$hour = check_time(preg_split("/:/", $arr[4]));
-	if ($day !== 0 && $day_num !== 0 && $month !== 0 && $year !== 0 && $time !== 0)
+	if ($day !== 0 && $day_num !== 0 && $month !== 0 && $year !== 0 && $hour !== 0)
 	{
-		date_default_timezone_set('UTC');
-		$time = mktime(intval($hour[0]), intval($hour[1]), intval($hour[2]), month_atoi($month), $day_num, $year, 1);
+		date_default_timezone_set('Europe/Paris');
+		$time = mktime(intval($hour[0]), intval($hour[1]), intval($hour[2]), month_atoi($month), $day_num, $year);
 		echo $time."\n";
 
 	}
 	else
-		echo "Wrong Format";
+		echo "Wrong Format\n";
 }
 ?>

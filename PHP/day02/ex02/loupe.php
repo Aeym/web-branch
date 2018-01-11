@@ -2,9 +2,8 @@
 <?php
 if ($argc != 2)
   exit();
-$fd = fopen($argv[1], "r");
 $homepage = file_get_contents($argv[1]);
-$ret = preg_replace_callback("/<a .+\/a>/", function($words) {
+$ret = preg_replace_callback("/<a .*href=.+\/a>/", function($words) {
   $words[0] = preg_replace_callback("/>.[^<]+</", function($words2) {
     return (strtoupper($words2[0]));}, $words[0]);
   $words[0] = preg_replace_callback("/title=\".+\"/", function($words3) {

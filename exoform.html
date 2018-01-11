@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>exoform</title>
+  </head>
+  <body>
+    <h1>Register</h1>
+    <form>
+      <label for="fname">First Name:</label>
+      <input type="text" placeholder="John" id="fname" required>
+      <label for="lname">Last Name:</label>
+      <input type="text" placeholder="Smith" id="lname" required>
+      <div>
+        <label for="male">Male</label>
+        <input type="radio" id="male" name="sex">
+        <label for="female">Female</label>
+        <input type="radio" id="female" name="sex">
+        <label for="other">Other</label>
+        <input type="radio" id="other" name="sex">
+      </div>
+      <div>
+        <label for="mail">Email</label>
+        <input type="email" id="mail" placeholder="your email" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="your password" pattern=".{5,10}" required title="5 to 10 characters">
+      </div>
+      <div>
+        <label>Birthday:
+          <select name="month">
+            <option>Month</option>
+            <option>Jan</option>
+            <option>Feb</option>
+          </select>
+          <select name="day">
+            <option>Day</option>
+            <option>01</option>
+            <option>02</option>
+          </select>
+          <select name="years">
+            <option>Years</option>
+            <option>1987</option>
+            <option>1988</option>
+          </select>
+        </label>
+      </div>
+      <div>
+        <label for="agree">I agree to the terms and conditions</label>
+        <input id="agree" type="checkbox" name="agree" required>
+      </div>
+      <input type="submit" value="ok">
+    </form>
+  </body>
+</html>

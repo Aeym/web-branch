@@ -1,4 +1,3 @@
-eleve,eleve0,name,pierre,age,15,eleve1,name,john,age,16,eleve2,name,jean,age,17
-profs,prof0,name,mauricette,age,68,prof1,name,michel,age,69,prof2,name,maurice,age,70
-eleve,eleve0,name,pierre,age,15,eleve1,name,john,age,16,eleve2,name,jean,age,17
-profs,prof0,name,mauricette,age,68,prof1,name,michel,age,69,prof2,name,maurice,age,70
+users,0,name,pierre,password,bite,basket,keke/kuku/kaka,1,name,andre,password,salut,basket,-1,2,name,patrick,password,sandwich,basket,fofo
+categories,0,name,info,1,name,utility
+products,0,name,clavier,categories,info/utility,img_path,../d03/img/42.pgn,price,15,amount_left,4,details,super clavier

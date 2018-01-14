@@ -10,6 +10,8 @@
 								"prof2"=>array('name'=>"maurice", 'age'=>"70"),
 								)
 				);
+	$data2 = array("eleve3"=>array('name'=>"jeanot", 'age'=>"25"));
+	$data["eleve"] = array_merge($data["eleve"], $data2);
 	echo "original array :\n";
 	print_r($data);
 	$fp = fopen("./database.csv", "c+");
@@ -32,7 +34,7 @@
 		$tmp++;
 	}
 	$str[strlen($str) - 1] = "\n";
-	file_put_contents("./database.csv", $str, FILE_APPEND);  // here we store the csv -
+	file_put_contents("./database.csv", $str);  // here we store the csv -
 	fclose($fp);                                             // - format stored in $str in csv file.
 	$fd = fopen("./database.csv", "c+");
 	while ($line = fgetcsv($fd))                             // and here we manage to read the csv
